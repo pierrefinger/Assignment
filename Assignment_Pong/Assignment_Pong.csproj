@@ -89,6 +89,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\ball.cs" />
+    <Compile Include="Assets\Scripts\ballUpdated.cs" />
     <Compile Include="Assets\Scripts\player_1.cs" />
     <Compile Include="Assets\Scripts\player_2.cs" />
   </ItemGroup>
