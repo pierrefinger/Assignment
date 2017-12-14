@@ -1,15 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ball : MonoBehaviour {
     private Rigidbody2D rb2d;
     private Vector2 vel;
 
+    public Text score1;
+    private int count1;
+    public Text score2;
+    private int count2;
+
+    void OnTriggerEnter2D(Collider2D other)
+    {        
+        if(other.gameObject.CompareTag("trigger1"))
+        {
+            Debug.Log("Trigger");
+            count1 = count1 + 1;
+            score1.text = count1.ToString();
+            transform.position = new Vector3(0, 0, 1);
+
+        }
+        else if (other.gameObject.CompareTag("trigger2"))
+        {
+            Debug.Log("Trigger2");
+            count2 = count2 + 1;
+            score2.text = count2.ToString();
+            transform.position = new Vector3(0, 0, 1);
+        }
+    }
     // Use this for initialization
     void Start () {
         rb2d = GetComponent<Rigidbody2D>();
         Invoke("GoBall", 0);
+        count1 = 0;
+        count2 = 0;
+        score1.text = count1.ToString();
+        score2.text = count2.ToString();
     }
 	
 	// Update is called once per frame
@@ -22,11 +50,11 @@ public class ball : MonoBehaviour {
         float rand = Random.Range(0, 2);
         if (rand < 1)
         {
-            rb2d.AddForce(new Vector2(200, -150));
+            rb2d.AddForce(new Vector2(300, -200));
         }
         else
         {
-            rb2d.AddForce(new Vector2(-200, -150));
+            rb2d.AddForce(new Vector2(-300, -200));
         }
     }
 

@@ -14,7 +14,6 @@ public class player_1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Rotate(0, 0, 50 * Time.deltaTime);
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
@@ -25,11 +24,11 @@ public class player_1 : MonoBehaviour {
         }
         if (transform.position.y > topBound)
         {
-            transform.position = new Vector3(transform.position.x, topBound, 0);
+            transform.position = new Vector3(transform.position.x, topBound, 1);
         }
         else if (transform.position.y < bottomBound)
         {
-            transform.position = new Vector3(transform.position.x, bottomBound, 0);
+            transform.position = new Vector3(transform.position.x, bottomBound, 1);
         }
     }
 }
