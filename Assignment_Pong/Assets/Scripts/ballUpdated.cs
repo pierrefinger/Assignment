@@ -18,7 +18,7 @@ public class ballUpdated : MonoBehaviour
         if (other.gameObject.CompareTag("trigger1"))
         {
             Debug.Log("Trigger");
-            count1 = count1 + 1;
+            count1 = count1 + 2;
             score1.text = count1.ToString();
             transform.position = new Vector3(0, 0, 1);
             if (count1 == 10)
@@ -30,7 +30,7 @@ public class ballUpdated : MonoBehaviour
         else if (other.gameObject.CompareTag("trigger2"))
         {
             Debug.Log("Trigger2");
-            count2 = count2 + 1;
+            count2 = count2 + 2;
             score2.text = count2.ToString();
             transform.position = new Vector3(0, 0, 1);
             if (count2 == 10)
@@ -61,11 +61,11 @@ public class ballUpdated : MonoBehaviour
         float rand = Random.Range(0, 2);
         if (rand < 1)
         {
-            rb2d.AddForce(new Vector2(300, -200));
+            rb2d.AddForce(new Vector2(400, -300));
         }
         else
         {
-            rb2d.AddForce(new Vector2(-300, -200));
+            rb2d.AddForce(new Vector2(-400, -300));
         }
     }
 
