@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ballUpdated : MonoBehaviour
+public class ballUpdatedLevel3 : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     private Vector2 vel;
@@ -23,7 +23,7 @@ public class ballUpdated : MonoBehaviour
             transform.position = new Vector3(0, 0, 1);
             if (count1 == 10)
             {
-                Application.LoadLevel("level_3");
+                Application.LoadLevel("End");
             }
 
         }
@@ -35,7 +35,7 @@ public class ballUpdated : MonoBehaviour
             transform.position = new Vector3(0, 0, 1);
             if (count2 == 10)
             {
-                Application.LoadLevel("level_3");
+                Application.LoadLevel("End");
             }
         }
     }

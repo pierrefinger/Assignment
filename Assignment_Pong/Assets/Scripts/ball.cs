@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ball : MonoBehaviour {
+public class ballupdatedLevel3 : MonoBehaviour {
     private Rigidbody2D rb2d;
     private Vector2 vel;
 
     public Text score1;
-    private int count1;
+    public int count1;
     public Text score2;
-    private int count2;
+    public int count2;
 
     void OnTriggerEnter2D(Collider2D other)
     {        
@@ -57,11 +57,11 @@ public class ball : MonoBehaviour {
         float rand = Random.Range(0, 2);
         if (rand < 1)
         {
-            rb2d.AddForce(new Vector2(300, -200));
+            rb2d.AddForce(new Vector2(350, -250));
         }
         else
         {
-            rb2d.AddForce(new Vector2(-300, -200));
+            rb2d.AddForce(new Vector2(-350, -250));
         }
     }
 
