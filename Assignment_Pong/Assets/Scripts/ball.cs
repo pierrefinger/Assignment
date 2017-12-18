@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ballupdatedLevel3 : MonoBehaviour {
+public class ball : MonoBehaviour
+{
     private Rigidbody2D rb2d;
     private Vector2 vel;
 
@@ -13,22 +14,23 @@ public class ballupdatedLevel3 : MonoBehaviour {
     public int count2;
 
     void OnTriggerEnter2D(Collider2D other)
-    {        
-        if(other.gameObject.CompareTag("trigger1"))
+    {
+        if (other.gameObject.CompareTag("trigger1"))
         {
             Debug.Log("Trigger");
-            count1 = count1 + 1;
+            count1 = count1 + 2;
             score1.text = count1.ToString();
             transform.position = new Vector3(0, 0, 1);
             if (count1 == 10)
             {
                 Application.LoadLevel("level_2");
             }
+
         }
         else if (other.gameObject.CompareTag("trigger2"))
         {
             Debug.Log("Trigger2");
-            count2 = count2 + 1;
+            count2 = count2 + 2;
             score2.text = count2.ToString();
             transform.position = new Vector3(0, 0, 1);
             if (count2 == 10)
@@ -38,7 +40,8 @@ public class ballupdatedLevel3 : MonoBehaviour {
         }
     }
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         rb2d = GetComponent<Rigidbody2D>();
         Invoke("GoBall", 0);
         count1 = 0;
@@ -46,10 +49,11 @@ public class ballupdatedLevel3 : MonoBehaviour {
         score1.text = count1.ToString();
         score2.text = count2.ToString();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
+
+    // Update is called once per frame
+    void Update()
+    {
+
 
     }
     void GoBall()
@@ -57,12 +61,13 @@ public class ballupdatedLevel3 : MonoBehaviour {
         float rand = Random.Range(0, 2);
         if (rand < 1)
         {
-            rb2d.AddForce(new Vector2(350, -250));
+            rb2d.AddForce(new Vector2(400, -300));
         }
         else
         {
-            rb2d.AddForce(new Vector2(-350, -250));
+            rb2d.AddForce(new Vector2(-400, -300));
         }
     }
 
 }
+
